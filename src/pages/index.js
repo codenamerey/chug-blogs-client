@@ -14,9 +14,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='flex bg-black'>
-          <p className="text-white">Maputi</p>
-        </div>
       </main>
     </>
   )
