@@ -15,19 +15,31 @@ export default function Home({ UserContext }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className=' flex flex-col justify-center items-center grow text-center'>
+      <main className=' flex flex-col justify-center items-center grow text-center [&>h1]:text-2xl [&>h1]:text-orange-700 [&>h1]:font-bold [&>h3]:text-gray-900'>
         {
           !first_name &&
             <>
-              <h1 className=' text-2xl text-orange-700 font-bold'>
+              <h1>
                 Chug Blogs
               </h1>
 
-              <h3 className=' text-gray-900'>
+              <h3>
                 Education, programming, KDrama, Anime, Life. <br />
                 In front of a pint of beer.
               </h3>
             </>
+        }
+
+        {
+          first_name && 
+          <>
+            <h1>Welcome, user {first_name}</h1>
+            <h3>What do you want to do today?</h3>
+            <ul className='flex flex-col gap-4 [&>li>button]:bg-slate-700 text-white [&>li>button]:px-6 [&>li>button]:py-3 [&>li>button]:rounded-full'>
+              <li><button>Create A Post</button></li>
+              <li><button>Log Out</button></li>
+            </ul>
+          </>
         }
       </main>
     </>
