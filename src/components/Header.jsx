@@ -28,7 +28,7 @@ const Header = ({ UserContext }) => {
             <Link href='/login'>
               <li>Log In</li>
             </Link>
-            <Link href='/signup'>
+            <Link href='/register/local'>
               <li>Sign Up</li>
             </Link>
             </ul>
