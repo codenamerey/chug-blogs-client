@@ -36,7 +36,7 @@ const login = ({ UserContext }) => {
 
   return (
     <main className="flex flex-col justify-center items-center grow">
-        <Form submitFunction={handleFormSubmit}>
+        <Form submitFunction={handleFormSubmit} id='login-form'>
 
             <label htmlFor="email">Email: </label>
             <input type="text" id="email" name="email_address" />
