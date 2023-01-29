@@ -23,10 +23,6 @@ export default function App({ Component, pageProps }) {
     })()
   }, []);
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
-
   return (
     <>
       <UserContext.Provider value={{...user, setUser}}>
