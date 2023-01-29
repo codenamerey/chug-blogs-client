@@ -37,11 +37,6 @@ const login = ({ UserContext }) => {
   return (
     <main className="flex flex-col justify-center items-center grow">
         <Form submitFunction={handleFormSubmit}>
-            <label htmlFor="first_name">First Name: </label>
-            <input type="text" id="first_name" name="first_name" />
-
-            <label htmlFor="last_name">Last Name: </label>
-            <input type="text" id="last_name" name="last_name" />
 
             <label htmlFor="email">Email: </label>
             <input type="text" id="email" name="email_address" />
