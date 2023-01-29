@@ -694,6 +694,25 @@ video {
   outline-offset: 2px;
 }
 
+.\[\&\>input\[type\=\"password\"\]\]\:border>input[type="password"] {
+  border-width: 1px;
+}
+
+.\[\&\>input\[type\=\"password\"\]\]\:px-6>input[type="password"] {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.\[\&\>input\[type\=\"password\"\]\]\:py-3>input[type="password"] {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.\[\&\>input\[type\=\"password\"\]\]\:outline-none>input[type="password"] {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .\[\&\>a\]\:bg-orange-400>a {
   --tw-bg-opacity: 1;
   background-color: rgb(251 146 60 / var(--tw-bg-opacity));

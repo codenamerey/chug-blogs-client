@@ -18,7 +18,6 @@ const login = ({ UserContext }) => {
       if(status == 200) {
         let data = await res.json();
         localStorage.setItem('jwt-token', data.token);
-        setUser(data.user);
         // Back to home page
         window.location.href = '/';
       }
