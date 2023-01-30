@@ -2,9 +2,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import { useContext } from 'react'
+import Link from 'next/link'
+import ArticleList from '@/components/ArticleList'
+
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({ UserContext }) {
+export default function Home({ UserContext, posts }) {
   const { first_name, setUser } = useContext(UserContext);
 
   const handleLogoutClick = () => {
@@ -41,12 +44,33 @@ export default function Home({ UserContext }) {
             <h1>Welcome, user {first_name}</h1>
             <h3>What do you want to do today?</h3>
             <ul className='flex flex-col gap-4 [&>li>button]:bg-slate-700 text-white [&>li>button]:px-6 [&>li>button]:py-3 [&>li>button]:rounded-full'>
-              <li><button>Create A Post</button></li>
+                <li>
+                    <button>
+                      <Link href='/post/create'>Create A Post</Link>
+                    </button>
+                </li>
+
               <li><button onClick={handleLogoutClick}>Log Out</button></li>
             </ul>
           </>
         }
+
       </main>
+
+      <section className='p-4 flex items-center'>
+      <ArticleList articles={posts} />
+      </section>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post`);
+  const posts = await res.json();
+
+  return {
+    props: {
+      posts
+    }
+  }
 }
