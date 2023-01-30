@@ -5,7 +5,12 @@ import { useContext } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({ UserContext }) {
-  const { first_name } = useContext(UserContext);
+  const { first_name, setUser } = useContext(UserContext);
+
+  const handleLogoutClick = () => {
+    localStorage.removeItem('jwt-token');
+    setUser(null);
+  }
 
   return (
     <>
@@ -37,7 +42,7 @@ export default function Home({ UserContext }) {
             <h3>What do you want to do today?</h3>
             <ul className='flex flex-col gap-4 [&>li>button]:bg-slate-700 text-white [&>li>button]:px-6 [&>li>button]:py-3 [&>li>button]:rounded-full'>
               <li><button>Create A Post</button></li>
-              <li><button>Log Out</button></li>
+              <li><button onClick={handleLogoutClick}>Log Out</button></li>
             </ul>
           </>
         }
