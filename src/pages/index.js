@@ -58,7 +58,7 @@ export default function Home({ UserContext, posts }) {
       </main>
 
       <section className='p-4 flex items-center flex-col sm:flex-row flex-wrap'>
-        <ArticleList articles={posts} />
+        <ArticleList articles={posts} UserContext={UserContext}/>
       </section>
     </>
   )
