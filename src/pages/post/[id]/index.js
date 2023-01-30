@@ -10,8 +10,8 @@ const index = ({article}) => {
   }, []);
 
   return (
-    <article>
-        <h1>{title}</h1>
+    <article className="text-center p-2 flex flex-col gap-y-2">
+        <h1 className="text-2xl">{title}</h1>
 
         <section id="content">
 
