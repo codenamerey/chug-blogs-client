@@ -10,13 +10,13 @@ const index = ({article}) => {
   }, []);
 
   return (
-    <article className="text-center p-2 flex flex-col gap-y-2">
-        <h1 className="text-2xl">{title}</h1>
-
-        <section id="content">
-
-        </section>
-    </article>
+    <main className=" grow flex flex-col m-10 items-center">
+        <article className=" text-justify md:w-1/2 p-2 flex flex-col gap-y-2 bg-white shadow-lg">
+            <h1 className="text-2xl">{title}</h1>
+            <section id="content">
+            </section>
+        </article>
+    </main>
   )
 }
 
