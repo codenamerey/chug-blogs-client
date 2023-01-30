@@ -15,7 +15,7 @@ const edit = ({ post }) => {
 
     try {
       const token = localStorage.getItem('jwt-token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post/`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post/${post._id}`, {
         method: 'put',
         body: urlEncoded,
         headers: {
@@ -40,7 +40,7 @@ const edit = ({ post }) => {
     <main className="flex flex-col justify-center items-center mt-4 gap-y-2">
       <Form submitFunction={handlePostSubmit} id="post">
           <label htmlFor="title">Title</label>
-          <input type="text" name="title" value={title} />
+          <input type="text" name="title" defaultValue={title}/>
           <Editor
            onInit={(evt, editor) => editorRef.current = editor}
            initialValue={content}
@@ -60,7 +60,7 @@ const edit = ({ post }) => {
            }}
          />
           <label htmlFor="description">Post Description: </label>
-         <textarea name="description" id="description" cols="30" rows="10" className="outline-none border p-2">{description}</textarea>
+         <textarea name="description" id="description" cols="30" rows="10" className="outline-none border p-2" defaultValue={description}></textarea>
 
          <input type="submit" value="Update Post" className=" bg-sky-900 px-6 py-3 rounded-full m-4 font-bold text-white inner shadow-md"/>
       </Form>
