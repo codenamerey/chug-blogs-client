@@ -587,14 +587,14 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-sky-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(12 74 110 / var(--tw-bg-opacity));
-}
-
 .bg-red-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+}
+
+.bg-sky-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 74 110 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-tr {
@@ -657,19 +657,33 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-yellow-700 {
+  --tw-text-opacity: 1;
+  color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+
+.text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity));
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.text-orange-500 {
+  --tw-text-opacity: 1;
+  color: rgb(249 115 22 / var(--tw-text-opacity));
+}
+
 .text-orange-900 {
   --tw-text-opacity: 1;
   color: rgb(124 45 18 / var(--tw-text-opacity));
 }
 
-.text-gray-900 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.text-orange-700 {
-  --tw-text-opacity: 1;
-  color: rgb(194 65 12 / var(--tw-text-opacity));
+.underline {
+  text-decoration-line: underline;
 }
 
 .shadow-lg {
@@ -701,6 +715,26 @@ video {
   .md\:w-1\/2 {
     width: 50%;
   }
+}
+
+.\[\&\>a\]\:bg-orange-400>a {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
+}
+
+.\[\&\>a\]\:p-2>a {
+  padding: 0.5rem;
+}
+
+.\[\&\>a\]\:text-yellow-700>a {
+  --tw-text-opacity: 1;
+  color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+
+.\[\&\>a\]\:shadow-inner>a {
+  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .\[\&\>input\[type\=\"text\"\]\]\:border>input[type="text"] {
@@ -741,19 +775,23 @@ video {
   outline-offset: 2px;
 }
 
-.\[\&\>a\]\:bg-orange-400>a {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
+.\[\&\>h1\]\:text-2xl>h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
-.\[\&\>a\]\:p-2>a {
-  padding: 0.5rem;
+.\[\&\>h1\]\:font-bold>h1 {
+  font-weight: 700;
 }
 
-.\[\&\>a\]\:shadow-inner>a {
-  --tw-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
-  --tw-shadow-colored: inset 0 2px 4px 0 var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.\[\&\>h1\]\:text-orange-700>h1 {
+  --tw-text-opacity: 1;
+  color: rgb(194 65 12 / var(--tw-text-opacity));
+}
+
+.\[\&\>h3\]\:text-gray-900>h3 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
 .\[\&\>li\>button\]\:rounded-full>li>button {
@@ -773,23 +811,4 @@ video {
 .\[\&\>li\>button\]\:py-3>li>button {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
-
-.\[\&\>h1\]\:text-2xl>h1 {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
-.\[\&\>h1\]\:font-bold>h1 {
-  font-weight: 700;
-}
-
-.\[\&\>h1\]\:text-orange-700>h1 {
-  --tw-text-opacity: 1;
-  color: rgb(194 65 12 / var(--tw-text-opacity));
-}
-
-.\[\&\>h3\]\:text-gray-900>h3 {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
 }

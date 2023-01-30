@@ -48,7 +48,7 @@ const register = () => {
             <input type="submit" value="Sign Up" className=" bg-sky-900 px-6 py-3 rounded-full m-4 font-bold text-white inner shadow-md"/>
         </Form>
 
-        <p>or sign up with <a href={`${process.env.NEXT_PUBLIC_SERVER}/api/user/google/`}>Google.</a></p>
+        <p>or sign up with <a href={`${process.env.NEXT_PUBLIC_SERVER}/api/user/google/`} className=" text-orange-900 font-bold underline">Google.</a></p>
     </main>
   )
 }
