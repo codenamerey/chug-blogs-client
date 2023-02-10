@@ -2,7 +2,7 @@ import Form from "@/components/Form"
 import { Editor } from "@tinymce/tinymce-react"
 import { useRef } from "react"
 
-const edit = ({ post }) => {
+const Edit = ({ post }) => {
   const editorRef = useRef(null);
   const {title, description, content } = post
 
@@ -70,7 +70,7 @@ const edit = ({ post }) => {
   )
 }
 
-export default edit
+export default Edit
 
 export const getServerSideProps = async(context) => {
     try{

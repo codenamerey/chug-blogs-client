@@ -7,7 +7,7 @@ const ArticleList = ({ articles, UserContext }) => {
         <div className=" flex grow flex-wrap w-full gap-2 flex-col md:flex-row">
             {
                 articles.map(article => {
-                    return <Article article={article} UserContext={UserContext}></Article>
+                    return <Article article={article} UserContext={UserContext} key={article._id}></Article>
                 })
             }
         </div>

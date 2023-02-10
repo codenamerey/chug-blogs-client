@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 
 
-const index = ({article, UserContext}) => {
+const Index = ({article, UserContext}) => {
   const { title, content, _id } = article;
   const user = useContext(UserContext);
   useEffect(() => {
@@ -42,7 +42,7 @@ const index = ({article, UserContext}) => {
   )
 }
 
-export default index
+export default Index
 
 export const getServerSideProps = async(context) => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post/${context.params.id}`);

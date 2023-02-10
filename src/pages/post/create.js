@@ -2,7 +2,7 @@ import Form from "@/components/Form"
 import { Editor } from "@tinymce/tinymce-react"
 import { useRef } from "react"
 
-const create = () => {
+const Create = () => {
   const editorRef = useRef(null);
 
   const handlePostSubmit = async(e) => {
@@ -68,4 +68,4 @@ const create = () => {
   )
 }
 
-export default create
+export default Create

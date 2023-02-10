@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const login = () => {
+const Login = () => {
     useEffect(() => {
         const url = window.location.search;
         const params = new URLSearchParams(url);
@@ -11,4 +11,4 @@ const login = () => {
     return;
 }
 
-export default login;
+export default Login;

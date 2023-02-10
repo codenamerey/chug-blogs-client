@@ -1,7 +1,7 @@
 import Form from "@/components/Form"
 import { useContext } from "react";
 
-const login = ({ UserContext }) => {
+const Login = ({ UserContext }) => {
   const { user, setUser } = useContext(UserContext);
 
   const handleFormSubmit = async(e) => {
@@ -54,4 +54,4 @@ const login = ({ UserContext }) => {
   )
 }
 
-export default login
+export default Login
