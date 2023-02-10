@@ -1,13 +1,29 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
-const index = ({article}) => {
 
-  const { title, content } = article;
-
+const index = ({article, UserContext}) => {
+  const { title, content, _id } = article;
+  const user = useContext(UserContext);
   useEffect(() => {
     const contentSect = document.querySelector('#content');
     contentSect.innerHTML = content;
   }, []);
+
+  const handleDeleteClick = async() => {
+    const token = localStorage.getItem('jwt-token');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post/${_id}`, {
+        method: 'delete',
+        headers: {
+            'Authorization': token
+        }
+    });
+    const data = await res.json();
+    if(data.success) {
+        window.location.href = '/';
+    } else {
+        console.log(data.error);
+    }
+  }
 
   return (
     <main className=" grow flex flex-col m-10 items-center">
@@ -15,6 +31,12 @@ const index = ({article}) => {
             <h1 className="text-2xl">{title}</h1>
             <section id="content">
             </section>
+            {
+                (user._id == article.author._id) ? (
+                    <button className="bg-red-700 text-white font-bold py-3 px-6 rounded-full" onClick={handleDeleteClick} >Delete</button>
+                )
+                : null
+            }
         </article>
     </main>
   )
