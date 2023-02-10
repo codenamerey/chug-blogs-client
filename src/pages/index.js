@@ -64,7 +64,7 @@ export default function Home({ UserContext, posts }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post`);
   const posts = await res.json();
 
