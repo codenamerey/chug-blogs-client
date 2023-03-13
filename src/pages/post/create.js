@@ -35,6 +35,23 @@ const Create = () => {
     }
   }
 
+  async function example_image_upload_handler (blobInfo, success, failure, progress) {
+
+    const fd = new FormData();
+    console.log(blobInfo);
+    fd.append('file', blobInfo.base64())
+
+    const data = new URLSearchParams(fd);
+
+    const upload = fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post/image`, {
+      method: 'POST',
+      body: data
+    });
+
+
+
+  };
+
   return (
     <main className="flex flex-col justify-center items-center mt-4 gap-y-2">
       <Form submitFunction={handlePostSubmit} id="post">
@@ -54,7 +71,8 @@ const Create = () => {
              'bold italic backcolor | alignleft aligncenter ' +
              'alignright alignjustify | bullist numlist outdent indent | ' +
              'removeformat | help | link image',
-             content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+             content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+             images_upload_handler: example_image_upload_handler
            }}
          />
           <label htmlFor="description">Post Description: </label>
