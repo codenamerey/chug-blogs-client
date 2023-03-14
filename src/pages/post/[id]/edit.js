@@ -36,6 +36,34 @@ const Edit = ({ post }) => {
     }
   }
 
+  async function example_image_upload_handler (blobInfo, success, failure, progress) {
+    try{
+      const fd = new FormData();
+      console.log(blobInfo);
+      fd.append('file', blobInfo.base64());
+
+      const data = new URLSearchParams(fd);
+      console.log('uploading...');
+      const upload = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post/image`, {
+        method: 'POST',
+        body: data
+      });
+      const res = await upload.json();
+      console.log(res);
+
+      return new Promise((resolve, reject) => {
+        resolve(res.image);
+      })
+
+    }
+
+    catch(err) {
+      console.log('epic fail')
+      failure(err);
+    }
+
+  };
+
   return (
     <main className="flex flex-col justify-center items-center mt-4 gap-y-2">
       <Form submitFunction={handlePostSubmit} id="post">
@@ -56,6 +84,7 @@ const Edit = ({ post }) => {
              'alignright alignjustify | bullist numlist outdent indent | ' +
              'removeformat | help | link image',
              content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+             images_upload_handler: example_image_upload_handler
            }}
          />
           <label htmlFor="description">Post Description: </label>
