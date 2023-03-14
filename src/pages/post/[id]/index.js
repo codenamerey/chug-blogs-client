@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-
+import Head from "next/head.js";
 
 const Index = ({article, UserContext}) => {
   const { title, content, _id } = article;
@@ -26,19 +26,25 @@ const Index = ({article, UserContext}) => {
   }
 
   return (
-    <main className=" grow flex flex-col m-10 items-center">
-        <article className=" text-justify md:w-1/2 p-2 flex flex-col gap-y-2 bg-white shadow-lg">
-            <h1 className="text-2xl">{title}</h1>
-            <section id="content">
-            </section>
-            {
-                (user._id == article.author._id) ? (
-                    <button className="bg-red-700 text-white font-bold py-3 px-6 rounded-full" onClick={handleDeleteClick} >Delete</button>
-                )
-                : null
-            }
-        </article>
-    </main>
+    <>
+        <Head>
+            <title>{title}</title>
+        </Head>
+
+        <main className=" grow flex flex-col m-10 items-center">
+            <article className=" text-justify md:w-1/2 p-2 flex flex-col gap-y-2 bg-white shadow-lg justify-center">
+                <h1 className="text-2xl">{title}</h1>
+                <section id="content" className="flex flex-col justify-center items-center">
+                </section>
+                {
+                    (user._id == article.author._id) ? (
+                        <button className="bg-red-700 text-white font-bold py-3 px-6 rounded-full" onClick={handleDeleteClick} >Delete</button>
+                    )
+                    : null
+                }
+            </article>
+        </main>
+    </>
   )
 }
 
