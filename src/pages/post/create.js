@@ -36,19 +36,30 @@ const Create = () => {
   }
 
   async function example_image_upload_handler (blobInfo, success, failure, progress) {
+    try{
+      const fd = new FormData();
+      console.log(blobInfo);
+      fd.append('file', blobInfo.base64());
 
-    const fd = new FormData();
-    console.log(blobInfo);
-    fd.append('file', blobInfo.base64())
+      const data = new URLSearchParams(fd);
+      console.log('uploading...');
+      const upload = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post/image`, {
+        method: 'POST',
+        body: data
+      });
+      const res = await upload.json();
+      console.log(res);
 
-    const data = new URLSearchParams(fd);
+      return new Promise((resolve, reject) => {
+        resolve(res.image);
+      })
 
-    const upload = fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/post/image`, {
-      method: 'POST',
-      body: data
-    });
+    }
 
-
+    catch(err) {
+      console.log('epic fail')
+      failure(err);
+    }
 
   };
 
