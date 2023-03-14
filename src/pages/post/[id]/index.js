@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import Head from "next/head.js";
 
 const Index = ({article, UserContext}) => {
-  const { title, content, _id } = article;
+  const { title, content, _id , description} = article;
   const user = useContext(UserContext);
   useEffect(() => {
     const contentSect = document.querySelector('#content');
@@ -29,6 +29,7 @@ const Index = ({article, UserContext}) => {
     <>
         <Head>
             <title>{title}</title>
+            <meta name="description" content={description} />
         </Head>
 
         <main className=" grow flex flex-col m-10 items-center">
